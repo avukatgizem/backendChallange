@@ -1,0 +1,15 @@
+const express = require('express');
+const router = express.Router();
+
+// Middleware fonksiyonu
+const myMiddleware = (req, res, next) => {
+  // Middleware işlemlerini burada gerçekleştirin
+  next(); // Sonraki adıma geçmek için next() fonksiyonunu çağırın
+};
+
+// Örnek bir route
+router.get('/', myMiddleware, (req, res) => {
+  // Route işlemlerini burada gerçekleştirin
+});
+
+module.exports = router;
